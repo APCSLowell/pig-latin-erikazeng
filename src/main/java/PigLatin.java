@@ -44,22 +44,23 @@ public class PigLatin {
 
   public String pigLatin(String sWord) {
 
-    if (findFirstVowel(sWord) == -1) {
+      if (findFirstVowel(sWord) == -1) {
       return sWord + "ay";
-    } else {
-      return "ERROR!";
-    }
-    if (findFirstVowel(sWord) ==1) {
-      return sWord +"way";
-    }
-    if (sWord.substring(0, 2) == "qu") {
-      String nb = sWord.substring(2, str.length());
+  } 
+  if (sWord.substring(0, 2).equals("qu")) {
+      String nb = sWord.substring(2, sWord.length());
       String b = sWord.substring(0, 2);
       return nb+b+"ay";
-    }
-    if (findFirstVowel(sWord) != 0) {
-      return sWord.substring(0, findFirstVowel(sWord))+ "ay";
-    }
   }
+  if (findFirstVowel(sWord) == 0) {
+      return sWord +"way";
+  }
+  if (sWord.substring(0,1) != "a"||sWord.substring(0,1) != "i"
+  ||sWord.substring(0,1) != "e"|| sWord.substring(0,1) != "i"
+  ||sWord.substring(0,1) != "o"||sWord.substring(0,1) != "u")
+  {
+      return sWord.substring(findFirstVowel(sWord))+sWord.substring(0, findFirstVowel(sWord)) + "ay";
+  } 
+ return "ERROR!!";
 }
 //end PigLatin class
