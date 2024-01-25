@@ -62,4 +62,5 @@ public class PigLatin {
   } 
  return "ERROR!!";
 }
+}
 //end PigLatin class
